@@ -6,6 +6,8 @@
 **Frequency:** 3 days per week (Monday, Wednesday, Friday recommended)  
 **Goal:** Build strength foundation with the Big 5 compound movements
 
+**Program Note:** This program is heavily based on **Starting Strength** by Mark Rippetoe, one of the most effective beginner programs ever written. The core structure (3x5 linear progression, alternating A/B days, emphasis on the Big 5) comes directly from that system. I've adapted it slightly for a 4-week introduction, but credit goes to Rippetoe for the original framework.
+
 ---
 
 ## Table of Contents
@@ -38,6 +40,9 @@ They train the most muscle mass in the shortest time. Master these five and you'
 - Simple progression (add weight every session)
 - Just 3 days per week (recovery built in)
 - No fluff (no curls, ab work, or fancy accessories until you earn them)
+
+**Credit Where Credit Is Due:**  
+This program structure comes from Mark Rippetoe's **Starting Strength**, widely considered the gold standard for beginner barbell training. If you want the full version with detailed form instruction and programming beyond 4 weeks, get the book.
 
 ---
 
