@@ -4,26 +4,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
-const heroImages = [
-  '/images/CTC-1.jpg',
-  '/images/CTC-2.jpg',
-  '/images/CTC-3.jpg',
-  '/images/CTC-4.jpg',
-  '/images/CTC-5.jpg',
-]
-
 export default function Home() {
-  const [currentImage, setCurrentImage] = useState(0)
+  const [name, setName] = useState('')
   const [email, setEmail] = useState('')
+  const [interest, setInterest] = useState('')
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
-
-  const nextImage = () => {
-    setCurrentImage((prev) => (prev + 1) % heroImages.length)
-  }
-
-  const prevImage = () => {
-    setCurrentImage((prev) => (prev - 1 + heroImages.length) % heroImages.length)
-  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -33,12 +18,14 @@ export default function Home() {
       const response = await fetch('https://chad-mission-control.vercel.app/api/newsletter/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email })
+        body: JSON.stringify({ name, email, interest })
       })
       
       if (response.ok) {
         setSubmitStatus('success')
+        setName('')
         setEmail('')
+        setInterest('')
       } else {
         setSubmitStatus('error')
       }
@@ -69,55 +56,28 @@ export default function Home() {
         </nav>
       </header>
 
-      {/* Hero Section with Carousel */}
+      {/* Hero Section */}
       <section className="relative h-[600px] overflow-hidden">
-        {/* Carousel Background */}
+        {/* Hero Background Image */}
         <div className="absolute inset-0">
-          {heroImages.map((img, idx) => (
-            <div
-              key={img}
-              className={`absolute inset-0 transition-opacity duration-700 ${
-                idx === currentImage ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              <Image
-                src={img}
-                alt={`Gym ${idx + 1}`}
-                fill
-                className="object-cover"
-                priority={idx === 0}
-              />
-            </div>
-          ))}
+          <Image
+            src="/images/CTC-7.jpg"
+            alt="Cypress Training Center"
+            fill
+            className="object-cover"
+            priority
+          />
           {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 to-black/50" />
         </div>
-
-        {/* Carousel Controls */}
-        <button
-          onClick={prevImage}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 rounded-full transition-all"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-        <button
-          onClick={nextImage}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 rounded-full transition-all"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
 
         {/* Hero Content */}
         <div className="relative z-10 h-full flex items-center">
           <div className="max-w-6xl mx-auto px-4 text-white">
-            <h1 className="text-6xl font-bold mb-6 drop-shadow-lg">
+            <h1 className="text-6xl font-bold mb-6 drop-shadow-2xl">
               Train Smarter.<br />Get Stronger.
             </h1>
-            <p className="text-2xl mb-8 max-w-2xl drop-shadow-md">
+            <p className="text-2xl mb-8 max-w-2xl drop-shadow-lg">
               Remote strength coaching built around your goals, equipment, and schedule.
             </p>
             <a
@@ -128,58 +88,56 @@ export default function Home() {
             </a>
           </div>
         </div>
-
-        {/* Carousel Indicators */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex space-x-2">
-          {heroImages.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentImage(idx)}
-              className={`w-3 h-3 rounded-full transition-all ${
-                idx === currentImage ? 'bg-white w-8' : 'bg-white/50 hover:bg-white/75'
-              }`}
-            />
-          ))}
-        </div>
       </section>
 
-      {/* What We Offer */}
+      {/* Client Reviews */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-12 text-center">Remote Coaching That Works</h2>
+          <h2 className="text-4xl font-bold mb-12 text-center text-gray-900">What Our Clients Say</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="bg-blue-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+            {/* Review 1 - Placeholder */}
+            <div className="bg-white p-8 rounded-xl shadow-lg border-2 border-gray-100 hover:border-blue-500 transition-all">
+              <div className="flex mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                  </svg>
+                ))}
               </div>
-              <h3 className="font-bold text-xl mb-3">Personalized Programs</h3>
-              <p className="text-gray-600">
-                Strength plans built around your equipment, experience level, and goals. No cookie-cutter templates.
+              <p className="text-gray-700 mb-4 italic">
+                "Ian's coaching transformed my training. Down 20lbs and hitting PRs I never thought possible. Best investment I've made."
               </p>
+              <p className="font-semibold text-gray-900">— Client Name</p>
             </div>
-            <div className="bg-gradient-to-br from-green-50 to-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="bg-green-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
+
+            {/* Review 2 - Placeholder */}
+            <div className="bg-white p-8 rounded-xl shadow-lg border-2 border-gray-100 hover:border-blue-500 transition-all">
+              <div className="flex mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                  </svg>
+                ))}
               </div>
-              <h3 className="font-bold text-xl mb-3">Progressive Overload</h3>
-              <p className="text-gray-600">
-                Systematic strength gains over time. Track progress, adjust intensity, build real results.
+              <p className="text-gray-700 mb-4 italic">
+                "Finally found a program that works with my schedule and equipment. No fluff, just results. Highly recommend."
               </p>
+              <p className="font-semibold text-gray-900">— Client Name</p>
             </div>
-            <div className="bg-gradient-to-br from-purple-50 to-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="bg-purple-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+
+            {/* Review 3 - Placeholder */}
+            <div className="bg-white p-8 rounded-xl shadow-lg border-2 border-gray-100 hover:border-blue-500 transition-all">
+              <div className="flex mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                  </svg>
+                ))}
               </div>
-              <h3 className="font-bold text-xl mb-3">Flexible & Adaptive</h3>
-              <p className="text-gray-600">
-                Adapt to injuries, schedule changes, equipment availability. Real coaching, not rigid scripts.
+              <p className="text-gray-700 mb-4 italic">
+                "Great coaching, clear programming, and always responsive. Ian knows his stuff and genuinely cares about results."
               </p>
+              <p className="font-semibold text-gray-900">— Client Name</p>
             </div>
           </div>
         </div>
@@ -187,36 +145,55 @@ export default function Home() {
 
       {/* Email Signup */}
       <section id="signup" className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-xl mb-8 opacity-90">
-            Join our email list for free training resources, program templates, and weekly tips.
-          </p>
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
+            <p className="text-xl opacity-90">
+              Join our email list for free training resources, program templates, and weekly tips.
+            </p>
+          </div>
           
-          <form onSubmit={handleSubmit} className="max-w-md mx-auto">
-            <div className="flex flex-col sm:flex-row gap-3">
+          <form onSubmit={handleSubmit} className="max-w-2xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-4 mb-4">
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Your name"
+                required
+                className="px-6 py-4 rounded-lg text-gray-900 text-lg focus:outline-none focus:ring-4 focus:ring-blue-300"
+              />
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
                 required
-                className="flex-1 px-6 py-4 rounded-lg text-gray-900 text-lg focus:outline-none focus:ring-4 focus:ring-blue-300"
+                className="px-6 py-4 rounded-lg text-gray-900 text-lg focus:outline-none focus:ring-4 focus:ring-blue-300"
               />
-              <button
-                type="submit"
-                disabled={submitStatus === 'loading'}
-                className="bg-white text-blue-700 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 disabled:opacity-50 transition-all transform hover:scale-105 shadow-lg"
-              >
-                {submitStatus === 'loading' ? 'Subscribing...' : 'Get Started'}
-              </button>
             </div>
             
+            <textarea
+              value={interest}
+              onChange={(e) => setInterest(e.target.value)}
+              placeholder="What would you like to learn more about? (e.g., building muscle, losing fat, getting stronger, program design...)"
+              rows={4}
+              className="w-full px-6 py-4 rounded-lg text-gray-900 text-lg focus:outline-none focus:ring-4 focus:ring-blue-300 mb-4"
+            />
+            
+            <button
+              type="submit"
+              disabled={submitStatus === 'loading'}
+              className="w-full bg-white text-blue-700 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 disabled:opacity-50 transition-all transform hover:scale-105 shadow-lg"
+            >
+              {submitStatus === 'loading' ? 'Submitting...' : 'Get Started'}
+            </button>
+            
             {submitStatus === 'success' && (
-              <p className="mt-4 text-green-200 font-medium">✅ Thanks! Check your email for your first resource.</p>
+              <p className="mt-4 text-center text-green-200 font-medium">✅ Thanks! Check your email for your first resource.</p>
             )}
             {submitStatus === 'error' && (
-              <p className="mt-4 text-red-200 font-medium">❌ Something went wrong. Please try again.</p>
+              <p className="mt-4 text-center text-red-200 font-medium">❌ Something went wrong. Please try again.</p>
             )}
           </form>
         </div>
