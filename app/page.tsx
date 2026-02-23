@@ -143,13 +143,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Email Signup */}
+      {/* Get Started Form */}
       <section id="signup" className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
+            <h2 className="text-4xl font-bold mb-6">Let's Get Started</h2>
             <p className="text-xl opacity-90">
-              Join our email list for free training resources, program templates, and weekly tips.
+              Tell us about your goals and we'll send you free training resources to get you moving.
             </p>
           </div>
           
@@ -176,7 +176,7 @@ export default function Home() {
             <textarea
               value={interest}
               onChange={(e) => setInterest(e.target.value)}
-              placeholder="What would you like to learn more about? (e.g., building muscle, losing fat, getting stronger, program design...)"
+              placeholder="What are your goals? (e.g., build muscle, lose fat, get stronger, improve performance...)"
               rows={4}
               className="w-full px-6 py-4 rounded-lg bg-white text-gray-900 placeholder-gray-500 text-lg focus:outline-none focus:ring-4 focus:ring-blue-300 mb-4"
             />
