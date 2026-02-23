@@ -11,11 +11,13 @@ You're showing up to the gym. You're following a program. You're adding weight w
 
 But your lifts aren't moving. Your shoulders hurt. Your lower back aches after squats.
 
-**The problem isn't your program. It's your form.**
+**The problem isn't your program. It's your execution.**
 
 Bad form doesn't just slow progress — it actively sabotages it. You're loading dysfunctional patterns, building strength on top of compensation, and digging yourself into a hole that takes months to climb out of.
 
-Here are the 5 most common form mistakes I see (and how to fix them).
+But here's the kicker: **the biggest mistake isn't technical at all.** It's not even stepping foot in the gym.
+
+Here are the 5 most common mistakes killing your gains (and how to fix them).
 
 ---
 
@@ -61,6 +63,8 @@ Taking a shallow breath (or no breath at all) before a heavy rep. Letting your r
 **Why it kills gains:**  
 Your core is the foundation for every big lift. No brace = no stability = weaker lifts + back pain.
 
+Research shows that proper bracing (increasing intra-abdominal pressure) stabilizes your spine and allows you to produce more force. You're literally leaving pounds on the bar if you're not bracing correctly.
+
 **The fix:**  
 **Before every heavy rep:**
 1. Take a deep breath into your belly (not your chest)
@@ -93,22 +97,30 @@ The eccentric is where muscle damage happens. Control it.
 
 ---
 
-## 5. Letting Your Knees Cave In (Valgus Collapse)
+## 5. Not Doing Anything (Analysis Paralysis)
 
 **The mistake:**  
-Knees dive inward during squats, lunges, or deadlifts.
+You're reading articles. Watching YouTube videos. Comparing programs. Researching the "perfect" routine.
+
+But you're not in the gym.
 
 **Why it kills gains:**  
-Valgus collapse shifts stress from your quads and glutes to your knees and IT band. Over time, this leads to knee pain, patellar tendinitis, and weak glutes that can't fire properly.
+The biggest mistake isn't bad form, ego lifting, or skipping bracing. It's **not starting.**
 
-It's a compensation pattern. Your body is taking the path of least resistance because your glutes, adductors, or VMO (inner quad) are weak.
+People wait for the perfect plan. The perfect time. The perfect equipment. The perfect level of motivation.
+
+**Here's the truth:** There is no perfect plan. There's only the plan you actually follow.
+
+A mediocre program done consistently beats a perfect program you never start.
 
 **The fix:**  
-- **Cue:** "Spread the floor" as you squat. Push your knees out as you descend.
-- **Drill:** Pause squats with a mini band around your knees. Fight the band outward the entire time.
-- **Strengthening:** Add glute bridges, clamshells, and Bulgarian split squats to rebuild the weak links.
+- **Pick a simple program.** (Hint: [this one](/resources/beginner-strength-program) works.)
+- **Show up 3x this week.** Don't wait for Monday. Start today.
+- **Stop researching.** You don't need to understand periodization, RPE scales, or block programming yet. You need to squat, press, and pull heavy things.
 
-Film yourself from the front. If your knees track inward past your toes, you're collapsing. Drop the weight and retrain the pattern.
+Perfection is the enemy of progress. Start messy. Adjust as you go.
+
+**Still stuck?** That's what coaching is for. I'll give you a plan, hold you accountable, and adjust when life gets in the way. [Learn more about remote coaching here.](#get-started)
 
 ---
 
@@ -140,9 +152,33 @@ If your technique sucks, no amount of volume, periodization, or "effort" will sa
 
 ---
 
+<a name="get-started"></a>
+## Ready to Get Started? Let's Work Together.
+
+You know the mistakes. You know the fixes.
+
+**But knowing ≠ doing.**
+
+If you're tired of spinning your wheels, guessing at your programming, or wondering if your form is good enough — **let's fix that.**
+
+**I offer remote coaching for serious lifters who want:**
+- Custom programs built around your goals, equipment, and schedule
+- Form checks and feedback (send me videos, I'll tell you what to fix)
+- Accountability (weekly check-ins, progress tracking, adjustments when life happens)
+- Direct access to me via Telegram (no waiting days for email replies)
+
+**This isn't cookie-cutter templates. This is real coaching.**
+
+I work with beginners building their first foundation, intermediates pushing through plateaus, and experienced lifters fine-tuning their training.
+
+**[Click here to get started →](/)**  
+Tell me your goals, and I'll send you a plan.
+
+---
+
 **Next Steps:**
 - Download our free [Exercise Form Guide](/resources) for detailed breakdowns of the Big 5
-- Need a form check? Email me a video at ian@cypresstrainingcenter.com
+- Need a quick form check? Email me a video at ian@cypresstrainingcenter.com
 - Sign up at [cypresstraining.com](/) for weekly training tips
 
 Train smart. Get strong.
