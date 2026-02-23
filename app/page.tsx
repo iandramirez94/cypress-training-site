@@ -52,9 +52,6 @@ export default function Home() {
             <Link href="/resources" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
               Resources
             </Link>
-            <Link href="/calculator" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
-              Calculator
-            </Link>
           </div>
         </nav>
       </header>
