@@ -161,7 +161,7 @@ export default function Home() {
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Your name"
                 required
-                className="px-6 py-4 rounded-lg text-gray-900 text-lg focus:outline-none focus:ring-4 focus:ring-blue-300"
+                className="px-6 py-4 rounded-lg bg-white text-gray-900 placeholder-gray-500 text-lg focus:outline-none focus:ring-4 focus:ring-blue-300"
               />
               <input
                 type="email"
@@ -169,7 +169,7 @@ export default function Home() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
                 required
-                className="px-6 py-4 rounded-lg text-gray-900 text-lg focus:outline-none focus:ring-4 focus:ring-blue-300"
+                className="px-6 py-4 rounded-lg bg-white text-gray-900 placeholder-gray-500 text-lg focus:outline-none focus:ring-4 focus:ring-blue-300"
               />
             </div>
             
@@ -178,7 +178,7 @@ export default function Home() {
               onChange={(e) => setInterest(e.target.value)}
               placeholder="What would you like to learn more about? (e.g., building muscle, losing fat, getting stronger, program design...)"
               rows={4}
-              className="w-full px-6 py-4 rounded-lg text-gray-900 text-lg focus:outline-none focus:ring-4 focus:ring-blue-300 mb-4"
+              className="w-full px-6 py-4 rounded-lg bg-white text-gray-900 placeholder-gray-500 text-lg focus:outline-none focus:ring-4 focus:ring-blue-300 mb-4"
             />
             
             <button
@@ -202,10 +202,10 @@ export default function Home() {
       {/* Resources Preview */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-12 text-center">Free Training Resources</h2>
+          <h2 className="text-4xl font-bold mb-12 text-center text-gray-900">Free Training Resources</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-xl border-2 border-gray-200 hover:border-blue-500 hover:shadow-xl transition-all">
-              <h3 className="font-bold text-2xl mb-3">Exercise Form Guide</h3>
+              <h3 className="font-bold text-2xl mb-3 text-gray-900">Exercise Form Guide</h3>
               <p className="text-gray-600 mb-6">Master the Big 5 compounds + key accessory movements</p>
               <Link
                 href="/resources"
@@ -215,7 +215,7 @@ export default function Home() {
               </Link>
             </div>
             <div className="bg-white p-8 rounded-xl border-2 border-gray-200 hover:border-green-500 hover:shadow-xl transition-all">
-              <h3 className="font-bold text-2xl mb-3">Beginner Program</h3>
+              <h3 className="font-bold text-2xl mb-3 text-gray-900">Beginner Program</h3>
               <p className="text-gray-600 mb-6">4-week linear progression strength plan</p>
               <Link
                 href="/resources"
@@ -225,7 +225,7 @@ export default function Home() {
               </Link>
             </div>
             <div className="bg-white p-8 rounded-xl border-2 border-gray-200 hover:border-purple-500 hover:shadow-xl transition-all">
-              <h3 className="font-bold text-2xl mb-3">Weekly Blog</h3>
+              <h3 className="font-bold text-2xl mb-3 text-gray-900">Weekly Blog</h3>
               <p className="text-gray-600 mb-6">Training tips, form breakdowns, program design</p>
               <Link
                 href="/blog"
