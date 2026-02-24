@@ -32,6 +32,22 @@ export default function Resources() {
             </Link>
           </div>
 
+          <div className="border-2 border-green-500 rounded-lg p-6 bg-gradient-to-br from-green-50 to-white">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-2xl">🚶</span>
+              <h2 className="text-2xl font-bold text-gray-900">NEAT Calculator</h2>
+            </div>
+            <p className="text-gray-600 mb-4">
+              Estimate calories burned from daily activity (walking, standing, chores). Often burns more than your workouts!
+            </p>
+            <Link 
+              href="/neat-calculator"
+              className="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
+            >
+              Calculate NEAT →
+            </Link>
+          </div>
+
           <div className="border border-gray-200 rounded-lg p-6 bg-white">
             <h2 className="text-2xl font-bold mb-2 text-gray-900">Exercise Form Guide</h2>
             <p className="text-gray-600 mb-4">
