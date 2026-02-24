@@ -86,10 +86,10 @@ export default function TDEECalculator() {
       <main className="max-w-4xl mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-gray-900 mb-4">
-            TDEE Calculator
+            Daily Calorie Calculator
           </h1>
           <p className="text-xl text-gray-600">
-            Calculate your Total Daily Energy Expenditure
+            Find out how many calories you should eat based on your goals
           </p>
         </div>
 
@@ -186,42 +186,49 @@ export default function TDEECalculator() {
               Your Daily Calorie Targets
             </h2>
 
-            {/* BMR */}
-            <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-lg p-6 text-center mb-6">
-              <p className="text-gray-600 text-sm mb-2">Basal Metabolic Rate (BMR)</p>
-              <p className="text-4xl font-bold text-gray-900 mb-2">{results.bmr}</p>
-              <p className="text-gray-500 text-sm">calories/day at rest</p>
-            </div>
-
-            {/* TDEE */}
-            <div className="bg-gradient-to-br from-blue-50 to-white border-2 border-blue-200 rounded-lg p-6 text-center mb-6">
-              <p className="text-gray-600 text-sm mb-2">Total Daily Energy Expenditure (TDEE)</p>
-              <p className="text-5xl font-bold text-blue-600 mb-2">{results.tdee}</p>
-              <p className="text-gray-500 text-sm">calories/day to maintain weight</p>
-            </div>
-
-            {/* Goal Targets */}
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
+            {/* Goal Targets - Featured */}
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div className="bg-gradient-to-br from-red-50 to-white border-2 border-red-200 rounded-lg p-6 text-center">
-                <p className="text-gray-600 text-sm mb-2">Fat Loss (15% deficit)</p>
-                <p className="text-4xl font-bold text-red-600 mb-2">{results.cut}</p>
-                <p className="text-gray-500 text-sm">calories/day</p>
+                <p className="text-gray-700 font-semibold mb-2">To Lose Fat</p>
+                <p className="text-5xl font-bold text-red-600 mb-2">{results.cut}</p>
+                <p className="text-gray-500 text-sm">calories/day (15% deficit)</p>
               </div>
 
               <div className="bg-gradient-to-br from-green-50 to-white border-2 border-green-200 rounded-lg p-6 text-center">
-                <p className="text-gray-600 text-sm mb-2">Muscle Gain (10% surplus)</p>
-                <p className="text-4xl font-bold text-green-600 mb-2">{results.bulk}</p>
-                <p className="text-gray-500 text-sm">calories/day</p>
+                <p className="text-gray-700 font-semibold mb-2">To Build Muscle</p>
+                <p className="text-5xl font-bold text-green-600 mb-2">{results.bulk}</p>
+                <p className="text-gray-500 text-sm">calories/day (10% surplus)</p>
               </div>
             </div>
+
+            {/* TDEE - Secondary */}
+            <div className="bg-gradient-to-br from-blue-50 to-white border-2 border-blue-200 rounded-lg p-6 text-center mb-8">
+              <p className="text-gray-600 text-sm mb-2">To Maintain Weight</p>
+              <p className="text-4xl font-bold text-blue-600 mb-2">{results.tdee}</p>
+              <p className="text-gray-500 text-sm">calories/day (maintenance)</p>
+            </div>
+
+            {/* BMR - Technical Detail */}
+            <details className="mb-8">
+              <summary className="cursor-pointer text-gray-700 font-medium mb-4">Show technical breakdown</summary>
+              <div className="bg-gray-50 rounded-lg p-6 mt-4">
+                <div className="flex justify-between items-center">
+                  <div>
+                    <p className="text-sm text-gray-600 mb-1">Basal Metabolic Rate (BMR)</p>
+                    <p className="text-gray-500 text-xs">Calories burned at rest</p>
+                  </div>
+                  <p className="text-2xl font-bold text-gray-900">{results.bmr}</p>
+                </div>
+              </div>
+            </details>
 
             {/* CTA */}
             <div className="bg-gradient-to-r from-blue-50 to-blue-100 border-2 border-blue-300 rounded-lg p-6 text-center">
               <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                Want a Complete Training & Nutrition Plan?
+                Need Help Hitting These Targets?
               </h3>
               <p className="text-gray-700 mb-6">
-                Get a personalized program with custom calorie targets, macro breakdowns, and progressive training built around your goals.
+                We'll build a custom meal plan, training program, and give you direct coaching support so you actually hit your numbers consistently.
               </p>
               <Link
                 href="/"
@@ -235,22 +242,22 @@ export default function TDEECalculator() {
 
         {/* How It Works */}
         <div className="mt-12 bg-white rounded-lg border-2 border-gray-200 shadow-lg p-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">How This Works</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">How to Use These Numbers</h2>
           <div className="space-y-3 text-gray-700">
             <p>
-              <strong className="text-gray-900">BMR (Basal Metabolic Rate):</strong> The calories your body burns at rest just to keep you alive (breathing, circulation, cell production).
+              <strong className="text-gray-900">To Lose Fat:</strong> Eat the fat loss target (~15% below maintenance). This gives you a sustainable rate of ~1 lb/week fat loss for most people.
             </p>
             <p>
-              <strong className="text-gray-900">TDEE (Total Daily Energy Expenditure):</strong> BMR + activity level. This is your maintenance calories — eat this amount to maintain your current weight.
+              <strong className="text-gray-900">To Build Muscle:</strong> Eat the muscle gain target (~10% above maintenance). This supports muscle growth while minimizing fat gain.
             </p>
             <p>
-              <strong className="text-gray-900">Fat Loss:</strong> 15% calorie deficit. Sustainable rate for most people (~1 lb/week fat loss).
-            </p>
-            <p>
-              <strong className="text-gray-900">Muscle Gain:</strong> 10% calorie surplus. Minimizes fat gain while supporting muscle growth.
+              <strong className="text-gray-900">To Maintain Weight:</strong> Eat the maintenance number. Good for performance phases or taking a break from dieting.
             </p>
             <p className="text-sm text-gray-600 mt-4">
-              Note: These are starting points. Track your weight for 2-3 weeks and adjust if needed. Need help dialing it in? <Link href="/" className="text-blue-600 hover:underline font-medium">Work with us</Link>.
+              These are starting points based on your stats and activity level. Track your weight for 2-3 weeks and adjust by 100-200 calories if needed.
+            </p>
+            <p className="text-sm text-gray-600">
+              Need help hitting these targets consistently? <Link href="/" className="text-blue-600 hover:underline font-medium">Work with us</Link> — we'll build a custom meal plan and training program around your numbers.
             </p>
           </div>
         </div>
