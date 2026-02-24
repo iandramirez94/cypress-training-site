@@ -34,17 +34,17 @@ export default function Resources() {
 
           <div className="border-2 border-green-500 rounded-lg p-6 bg-gradient-to-br from-green-50 to-white">
             <div className="flex items-center gap-2 mb-2">
-              <span className="text-2xl">🚶</span>
-              <h2 className="text-2xl font-bold text-gray-900">NEAT Calculator</h2>
+              <span className="text-2xl">🧮</span>
+              <h2 className="text-2xl font-bold text-gray-900">Macro Split Calculator</h2>
             </div>
             <p className="text-gray-600 mb-4">
-              Estimate calories burned from daily activity (walking, standing, chores). Often burns more than your workouts!
+              Break down your calories into protein, carbs, and fats based on your preference (high carb, low carb, or balanced).
             </p>
             <Link 
-              href="/neat-calculator"
+              href="/macro-split"
               className="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
             >
-              Calculate NEAT →
+              Calculate Macros →
             </Link>
           </div>
 

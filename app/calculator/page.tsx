@@ -258,13 +258,13 @@ export default function TDEECalculator() {
         {/* Related Tools */}
         <div className="mt-8 text-center">
           <p className="text-gray-700 mb-4">
-            Want to see how daily activity affects your calorie burn?
+            Want to break down your calories into protein, carbs, and fats?
           </p>
           <Link
-            href="/neat-calculator"
+            href="/macro-split"
             className="inline-block text-blue-600 hover:text-blue-700 font-semibold underline"
           >
-            Try the NEAT Calculator →
+            Try the Macro Split Calculator →
           </Link>
         </div>
       </main>
