@@ -29,12 +29,16 @@ export default function MacrosCalculator() {
       return;
     }
 
+    // Convert imperial to metric for Mifflin-St Jeor equation
+    const weightKg = weightNum * 0.453592; // lbs to kg
+    const heightCm = heightNum * 2.54; // inches to cm
+
     // Calculate BMR using Mifflin-St Jeor equation
     let bmr: number;
     if (gender === 'male') {
-      bmr = 10 * weightNum + 6.25 * heightNum - 5 * ageNum + 5;
+      bmr = 10 * weightKg + 6.25 * heightCm - 5 * ageNum + 5;
     } else {
-      bmr = 10 * weightNum + 6.25 * heightNum - 5 * ageNum - 161;
+      bmr = 10 * weightKg + 6.25 * heightCm - 5 * ageNum - 161;
     }
 
     // Activity multipliers
@@ -59,8 +63,8 @@ export default function MacrosCalculator() {
     }
 
     // Calculate macros
-    // Protein: 1g per lb bodyweight (converted from kg)
-    const proteinGrams = Math.round(weightNum / 0.453592); // kg to lbs
+    // Protein: 1g per lb bodyweight
+    const proteinGrams = Math.round(weightNum);
     const proteinCalories = proteinGrams * 4;
 
     // Fats: 25% of total calories
@@ -147,28 +151,28 @@ export default function MacrosCalculator() {
             {/* Weight */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Weight (kg)
+                Weight (lbs)
               </label>
               <input
                 type="number"
                 value={weight}
                 onChange={(e) => setWeight(e.target.value)}
                 className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none"
-                placeholder="75"
+                placeholder="165"
               />
             </div>
 
             {/* Height */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Height (cm)
+                Height (inches)
               </label>
               <input
                 type="number"
                 value={height}
                 onChange={(e) => setHeight(e.target.value)}
                 className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none"
-                placeholder="175"
+                placeholder="69"
               />
             </div>
 

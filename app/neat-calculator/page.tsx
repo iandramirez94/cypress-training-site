@@ -44,7 +44,7 @@ export default function NEATCalculator() {
     const occCals = occupationCalories[occupation];
 
     // Steps (rough estimate: 0.04-0.05 cal per step for average person)
-    const stepCals = Math.round(stepsNum * 0.045 * (weightNum / 70)); // Adjusted for body weight
+    const stepCals = Math.round(stepsNum * 0.045 * (weightNum / 154)); // Adjusted for body weight (154 lbs avg)
 
     // Standing (50-60 cal/hour more than sitting)
     const standingCals = Math.round(standingNum * 55);
@@ -145,14 +145,14 @@ export default function NEATCalculator() {
             {/* Weight */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Body Weight (kg)
+                Body Weight (lbs)
               </label>
               <input
                 type="number"
                 value={weight}
                 onChange={(e) => setWeight(e.target.value)}
                 className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none"
-                placeholder="75"
+                placeholder="165"
               />
             </div>
 
