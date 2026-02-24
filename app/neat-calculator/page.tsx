@@ -78,15 +78,15 @@ export default function NEATCalculator() {
     } else if (totalNEAT < 1500) {
       level = 'High NEAT';
       tips = [
-        'You're doing great! Keep it consistent.',
+        "You're doing great! Keep it consistent.",
         'Add variety: gardening, cleaning, active hobbies',
         'Track steps to maintain current level',
       ];
     } else {
       level = 'Very High NEAT';
       tips = [
-        'Excellent! You're burning significant calories through daily activity.',
-        'Make sure you're eating enough to support this activity level.',
+        "Excellent! You're burning significant calories through daily activity.",
+        "Make sure you're eating enough to support this activity level.",
         'Focus on recovery and sleep quality.',
       ];
     }
