@@ -18,17 +18,17 @@ export default function Resources() {
         <div className="grid md:grid-cols-2 gap-8">
           <div className="border-2 border-blue-500 rounded-lg p-6 bg-gradient-to-br from-blue-50 to-white">
             <div className="flex items-center gap-2 mb-2">
-              <span className="text-2xl">🧮</span>
-              <h2 className="text-2xl font-bold text-gray-900">Macro Calculator</h2>
+              <span className="text-2xl">🔥</span>
+              <h2 className="text-2xl font-bold text-gray-900">TDEE Calculator</h2>
             </div>
             <p className="text-gray-600 mb-4">
-              Calculate your personalized daily protein, carbs, and fats targets based on your goals.
+              Calculate your Total Daily Energy Expenditure and calorie targets for fat loss or muscle gain.
             </p>
             <Link 
               href="/calculator"
               className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
             >
-              Calculate Now →
+              Calculate TDEE →
             </Link>
           </div>
 

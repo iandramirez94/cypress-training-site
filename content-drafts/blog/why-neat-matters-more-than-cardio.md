@@ -154,7 +154,7 @@ We build custom programs that fit your schedule, equipment, and goals. No cookie
 ## Related Resources
 
 - **[Calculate Your NEAT →](/neat-calculator)** Use our calculator to estimate your daily non-exercise calorie burn
-- **[Calculate Your Macros →](/calculator)** Find your personalized daily calorie and macro targets
+- **[Calculate Your TDEE →](/calculator)** Find your personalized daily calorie targets
 - **[5 Form Mistakes Killing Your Gains →](/blog/5-form-mistakes-killing-your-gains)** Master the basics before adding complexity
 
 ---

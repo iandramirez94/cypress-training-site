@@ -295,11 +295,17 @@ export default function NEATCalculator() {
           </div>
         )}
 
-        {/* Learn More */}
+        {/* Related Tools */}
         <div className="mt-8 text-center">
           <p className="text-gray-700 mb-4">
-            Want to learn more about NEAT and why it matters for fat loss?
+            Want to calculate your total daily calorie needs?
           </p>
+          <Link
+            href="/calculator"
+            className="inline-block text-blue-600 hover:text-blue-700 font-semibold underline mr-6"
+          >
+            Try the TDEE Calculator →
+          </Link>
           <Link
             href="/blog/why-neat-matters-more-than-cardio"
             className="inline-block text-blue-600 hover:text-blue-700 font-semibold underline"

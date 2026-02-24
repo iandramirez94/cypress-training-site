@@ -4,22 +4,20 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function MacrosCalculator() {
+export default function TDEECalculator() {
   const [age, setAge] = useState('');
   const [gender, setGender] = useState('male');
   const [weight, setWeight] = useState('');
   const [height, setHeight] = useState('');
   const [activityLevel, setActivityLevel] = useState('moderate');
-  const [goal, setGoal] = useState('maintain');
   const [results, setResults] = useState<{
+    bmr: number;
     tdee: number;
-    protein: { grams: number; calories: number };
-    carbs: { grams: number; calories: number };
-    fats: { grams: number; calories: number };
-    totalCalories: number;
+    cut: number;
+    bulk: number;
   } | null>(null);
 
-  const calculateMacros = () => {
+  const calculateTDEE = () => {
     const weightNum = parseFloat(weight);
     const heightNum = parseFloat(height);
     const ageNum = parseInt(age);
@@ -51,36 +49,14 @@ export default function MacrosCalculator() {
     };
 
     const tdee = Math.round(bmr * activityMultipliers[activityLevel]);
-
-    // Adjust for goal
-    let targetCalories: number;
-    if (goal === 'cut') {
-      targetCalories = Math.round(tdee * 0.85); // 15% deficit
-    } else if (goal === 'bulk') {
-      targetCalories = Math.round(tdee * 1.1); // 10% surplus
-    } else {
-      targetCalories = tdee;
-    }
-
-    // Calculate macros
-    // Protein: 1g per lb bodyweight
-    const proteinGrams = Math.round(weightNum);
-    const proteinCalories = proteinGrams * 4;
-
-    // Fats: 25% of total calories
-    const fatCalories = Math.round(targetCalories * 0.25);
-    const fatGrams = Math.round(fatCalories / 9);
-
-    // Carbs: remaining calories
-    const carbCalories = targetCalories - proteinCalories - fatCalories;
-    const carbGrams = Math.round(carbCalories / 4);
+    const cut = Math.round(tdee * 0.85); // 15% deficit
+    const bulk = Math.round(tdee * 1.1); // 10% surplus
 
     setResults({
+      bmr: Math.round(bmr),
       tdee,
-      protein: { grams: proteinGrams, calories: proteinCalories },
-      carbs: { grams: carbGrams, calories: carbCalories },
-      fats: { grams: fatGrams, calories: fatCalories },
-      totalCalories: targetCalories,
+      cut,
+      bulk,
     });
   };
 
@@ -110,10 +86,10 @@ export default function MacrosCalculator() {
       <main className="max-w-4xl mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-gray-900 mb-4">
-            Macro Calculator
+            TDEE Calculator
           </h1>
           <p className="text-xl text-gray-600">
-            Calculate your personalized daily macronutrient targets
+            Calculate your Total Daily Energy Expenditure
           </p>
         </div>
 
@@ -177,7 +153,7 @@ export default function MacrosCalculator() {
             </div>
 
             {/* Activity Level */}
-            <div>
+            <div className="md:col-span-2">
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Activity Level
               </label>
@@ -193,29 +169,13 @@ export default function MacrosCalculator() {
                 <option value="veryActive">Very Active (2x/day)</option>
               </select>
             </div>
-
-            {/* Goal */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Goal
-              </label>
-              <select
-                value={goal}
-                onChange={(e) => setGoal(e.target.value)}
-                className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none"
-              >
-                <option value="cut">Lose Fat (15% deficit)</option>
-                <option value="maintain">Maintain Weight</option>
-                <option value="bulk">Build Muscle (10% surplus)</option>
-              </select>
-            </div>
           </div>
 
           <button
-            onClick={calculateMacros}
+            onClick={calculateTDEE}
             className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-4 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all"
           >
-            Calculate My Macros
+            Calculate My TDEE
           </button>
         </div>
 
@@ -223,68 +183,45 @@ export default function MacrosCalculator() {
         {results && (
           <div className="bg-white rounded-2xl border-2 border-gray-200 shadow-lg p-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
-              Your Daily Targets
+              Your Daily Calorie Targets
             </h2>
 
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
-              <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-lg p-6 text-center">
-                <p className="text-gray-600 text-sm mb-2">Maintenance Calories (TDEE)</p>
-                <p className="text-4xl font-bold text-gray-900">{results.tdee}</p>
-                <p className="text-gray-500 text-sm mt-1">calories/day</p>
-              </div>
-
-              <div className="bg-gradient-to-br from-blue-50 to-white border-2 border-blue-200 rounded-lg p-6 text-center">
-                <p className="text-gray-600 text-sm mb-2">Target Calories</p>
-                <p className="text-4xl font-bold text-blue-600">{results.totalCalories}</p>
-                <p className="text-gray-500 text-sm mt-1">calories/day</p>
-              </div>
+            {/* BMR */}
+            <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-lg p-6 text-center mb-6">
+              <p className="text-gray-600 text-sm mb-2">Basal Metabolic Rate (BMR)</p>
+              <p className="text-4xl font-bold text-gray-900 mb-2">{results.bmr}</p>
+              <p className="text-gray-500 text-sm">calories/day at rest</p>
             </div>
 
-            <div className="space-y-4 mb-8">
-              {/* Protein */}
-              <div className="bg-gradient-to-r from-blue-50 to-white border-2 border-blue-200 rounded-lg p-6">
-                <div className="flex justify-between items-center mb-2">
-                  <h3 className="text-xl font-semibold text-gray-900">Protein</h3>
-                  <span className="text-gray-600">{results.protein.calories} cal</span>
-                </div>
-                <div className="flex items-baseline gap-2">
-                  <span className="text-3xl font-bold text-blue-600">{results.protein.grams}g</span>
-                  <span className="text-gray-500">per day</span>
-                </div>
+            {/* TDEE */}
+            <div className="bg-gradient-to-br from-blue-50 to-white border-2 border-blue-200 rounded-lg p-6 text-center mb-6">
+              <p className="text-gray-600 text-sm mb-2">Total Daily Energy Expenditure (TDEE)</p>
+              <p className="text-5xl font-bold text-blue-600 mb-2">{results.tdee}</p>
+              <p className="text-gray-500 text-sm">calories/day to maintain weight</p>
+            </div>
+
+            {/* Goal Targets */}
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <div className="bg-gradient-to-br from-red-50 to-white border-2 border-red-200 rounded-lg p-6 text-center">
+                <p className="text-gray-600 text-sm mb-2">Fat Loss (15% deficit)</p>
+                <p className="text-4xl font-bold text-red-600 mb-2">{results.cut}</p>
+                <p className="text-gray-500 text-sm">calories/day</p>
               </div>
 
-              {/* Carbs */}
-              <div className="bg-gradient-to-r from-green-50 to-white border-2 border-green-200 rounded-lg p-6">
-                <div className="flex justify-between items-center mb-2">
-                  <h3 className="text-xl font-semibold text-gray-900">Carbohydrates</h3>
-                  <span className="text-gray-600">{results.carbs.calories} cal</span>
-                </div>
-                <div className="flex items-baseline gap-2">
-                  <span className="text-3xl font-bold text-green-600">{results.carbs.grams}g</span>
-                  <span className="text-gray-500">per day</span>
-                </div>
-              </div>
-
-              {/* Fats */}
-              <div className="bg-gradient-to-r from-amber-50 to-white border-2 border-amber-200 rounded-lg p-6">
-                <div className="flex justify-between items-center mb-2">
-                  <h3 className="text-xl font-semibold text-gray-900">Fats</h3>
-                  <span className="text-gray-600">{results.fats.calories} cal</span>
-                </div>
-                <div className="flex items-baseline gap-2">
-                  <span className="text-3xl font-bold text-amber-600">{results.fats.grams}g</span>
-                  <span className="text-gray-500">per day</span>
-                </div>
+              <div className="bg-gradient-to-br from-green-50 to-white border-2 border-green-200 rounded-lg p-6 text-center">
+                <p className="text-gray-600 text-sm mb-2">Muscle Gain (10% surplus)</p>
+                <p className="text-4xl font-bold text-green-600 mb-2">{results.bulk}</p>
+                <p className="text-gray-500 text-sm">calories/day</p>
               </div>
             </div>
 
             {/* CTA */}
             <div className="bg-gradient-to-r from-blue-50 to-blue-100 border-2 border-blue-300 rounded-lg p-6 text-center">
               <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                Want a Custom Program to Hit These Numbers?
+                Want a Complete Training & Nutrition Plan?
               </h3>
               <p className="text-gray-700 mb-6">
-                Get a personalized training plan, meal guidance, and direct coaching support to reach your goals faster.
+                Get a personalized program with custom calorie targets, macro breakdowns, and progressive training built around your goals.
               </p>
               <Link
                 href="/"
@@ -301,33 +238,33 @@ export default function MacrosCalculator() {
           <h2 className="text-2xl font-bold text-gray-900 mb-4">How This Works</h2>
           <div className="space-y-3 text-gray-700">
             <p>
-              <strong className="text-gray-900">TDEE (Total Daily Energy Expenditure):</strong> Your maintenance calories based on the Mifflin-St Jeor equation + activity level.
+              <strong className="text-gray-900">BMR (Basal Metabolic Rate):</strong> The calories your body burns at rest just to keep you alive (breathing, circulation, cell production).
             </p>
             <p>
-              <strong className="text-gray-900">Protein:</strong> 1g per pound of bodyweight. Preserves muscle during fat loss, supports growth during bulking.
+              <strong className="text-gray-900">TDEE (Total Daily Energy Expenditure):</strong> BMR + activity level. This is your maintenance calories — eat this amount to maintain your current weight.
             </p>
             <p>
-              <strong className="text-gray-900">Fats:</strong> 25% of total calories. Essential for hormone production and nutrient absorption.
+              <strong className="text-gray-900">Fat Loss:</strong> 15% calorie deficit. Sustainable rate for most people (~1 lb/week fat loss).
             </p>
             <p>
-              <strong className="text-gray-900">Carbs:</strong> Remaining calories after protein and fats. Your primary energy source for training.
+              <strong className="text-gray-900">Muscle Gain:</strong> 10% calorie surplus. Minimizes fat gain while supporting muscle growth.
             </p>
             <p className="text-sm text-gray-600 mt-4">
-              Note: These are starting points. Adjust based on your results after 2-3 weeks. Need help dialing it in? <Link href="/" className="text-blue-600 hover:underline font-medium">Work with us</Link>.
+              Note: These are starting points. Track your weight for 2-3 weeks and adjust if needed. Need help dialing it in? <Link href="/" className="text-blue-600 hover:underline font-medium">Work with us</Link>.
             </p>
           </div>
         </div>
 
-        {/* Download Cheat Sheet CTA */}
+        {/* Related Tools */}
         <div className="mt-8 text-center">
           <p className="text-gray-700 mb-4">
-            Want a quick reference guide to keep with you?
+            Want to see how daily activity affects your calorie burn?
           </p>
           <Link
-            href="/resources"
+            href="/neat-calculator"
             className="inline-block text-blue-600 hover:text-blue-700 font-semibold underline"
           >
-            Download the Macro Basics Cheat Sheet →
+            Try the NEAT Calculator →
           </Link>
         </div>
       </main>
