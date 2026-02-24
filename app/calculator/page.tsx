@@ -186,41 +186,34 @@ export default function TDEECalculator() {
               Your Daily Calorie Targets
             </h2>
 
-            {/* Goal Targets - Featured */}
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
+            {/* BMR */}
+            <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-lg p-6 text-center mb-6">
+              <p className="text-gray-600 text-sm mb-2">Basal Metabolic Rate (BMR)</p>
+              <p className="text-4xl font-bold text-gray-900 mb-2">{results.bmr}</p>
+              <p className="text-gray-500 text-sm">calories/day at rest</p>
+            </div>
+
+            {/* TDEE */}
+            <div className="bg-gradient-to-br from-blue-50 to-white border-2 border-blue-200 rounded-lg p-6 text-center mb-6">
+              <p className="text-gray-600 text-sm mb-2">Maintenance Calories</p>
+              <p className="text-5xl font-bold text-blue-600 mb-2">{results.tdee}</p>
+              <p className="text-gray-500 text-sm">calories/day to maintain weight</p>
+            </div>
+
+            {/* Goal Targets */}
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
               <div className="bg-gradient-to-br from-red-50 to-white border-2 border-red-200 rounded-lg p-6 text-center">
-                <p className="text-gray-700 font-semibold mb-2">To Lose Fat</p>
-                <p className="text-5xl font-bold text-red-600 mb-2">{results.cut}</p>
-                <p className="text-gray-500 text-sm">calories/day (15% deficit)</p>
+                <p className="text-gray-600 text-sm mb-2">Fat Loss (15% deficit)</p>
+                <p className="text-4xl font-bold text-red-600 mb-2">{results.cut}</p>
+                <p className="text-gray-500 text-sm">calories/day</p>
               </div>
 
               <div className="bg-gradient-to-br from-green-50 to-white border-2 border-green-200 rounded-lg p-6 text-center">
-                <p className="text-gray-700 font-semibold mb-2">To Build Muscle</p>
-                <p className="text-5xl font-bold text-green-600 mb-2">{results.bulk}</p>
-                <p className="text-gray-500 text-sm">calories/day (10% surplus)</p>
+                <p className="text-gray-600 text-sm mb-2">Muscle Gain (10% surplus)</p>
+                <p className="text-4xl font-bold text-green-600 mb-2">{results.bulk}</p>
+                <p className="text-gray-500 text-sm">calories/day</p>
               </div>
             </div>
-
-            {/* TDEE - Secondary */}
-            <div className="bg-gradient-to-br from-blue-50 to-white border-2 border-blue-200 rounded-lg p-6 text-center mb-8">
-              <p className="text-gray-600 text-sm mb-2">To Maintain Weight</p>
-              <p className="text-4xl font-bold text-blue-600 mb-2">{results.tdee}</p>
-              <p className="text-gray-500 text-sm">calories/day (maintenance)</p>
-            </div>
-
-            {/* BMR - Technical Detail */}
-            <details className="mb-8">
-              <summary className="cursor-pointer text-gray-700 font-medium mb-4">Show technical breakdown</summary>
-              <div className="bg-gray-50 rounded-lg p-6 mt-4">
-                <div className="flex justify-between items-center">
-                  <div>
-                    <p className="text-sm text-gray-600 mb-1">Basal Metabolic Rate (BMR)</p>
-                    <p className="text-gray-500 text-xs">Calories burned at rest</p>
-                  </div>
-                  <p className="text-2xl font-bold text-gray-900">{results.bmr}</p>
-                </div>
-              </div>
-            </details>
 
             {/* CTA */}
             <div className="bg-gradient-to-r from-blue-50 to-blue-100 border-2 border-blue-300 rounded-lg p-6 text-center">
