@@ -196,7 +196,7 @@ export default function TDEECalculator() {
             {/* TDEE */}
             <div className="bg-gradient-to-br from-blue-50 to-white border-2 border-blue-200 rounded-lg p-6 text-center mb-6">
               <p className="text-gray-600 text-sm mb-2">Maintenance Calories</p>
-              <p className="text-5xl font-bold text-blue-600 mb-2">{results.tdee}</p>
+              <p className="text-4xl font-bold text-blue-600 mb-2">{results.tdee}</p>
               <p className="text-gray-500 text-sm">calories/day to maintain weight</p>
             </div>
 
