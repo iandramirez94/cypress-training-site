@@ -101,8 +101,8 @@ export default function AIPage() {
                 <PhoneMockup
                   src="/app-screenshots/01-coach-selection.jpg"
                   alt="Choose your coach"
-                  width={300}
-                  height={650}
+                  width={340}
+                  height={680}
                   className="mx-auto"
                 />
               </div>
@@ -129,8 +129,8 @@ export default function AIPage() {
                 <PhoneMockup
                   src="/app-screenshots/03-experience.jpg"
                   alt="Answer questions about yourself"
-                  width={300}
-                  height={650}
+                  width={340}
+                  height={680}
                   className="mx-auto"
                 />
               </div>
@@ -157,8 +157,8 @@ export default function AIPage() {
                 <PhoneMockup
                   src="/app-screenshots/09-workout.jpg"
                   alt="Start training"
-                  width={300}
-                  height={650}
+                  width={340}
+                  height={680}
                   className="mx-auto"
                 />
               </div>
