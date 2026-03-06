@@ -1,4 +1,4 @@
-# Beginner Strength Program (4 Weeks)
+# How to Get Strong - A Program for Beginners
 
 **By Ian Ramirez, Cypress Training Center**  
 **Program Level:** Beginner (0-6 months training experience)  
@@ -6,7 +6,7 @@
 **Frequency:** 3 days per week (Monday, Wednesday, Friday recommended)  
 **Goal:** Build strength foundation with the Big 5 compound movements
 
-**Program Note:** This program is heavily based on **Starting Strength** by Mark Rippetoe, one of the most effective beginner programs ever written. The core structure (3x5 linear progression, alternating A/B days, emphasis on the Big 5) comes directly from that system. I've adapted it slightly for a 4-week introduction, but credit goes to Rippetoe for the original framework.
+**Program Note:** This is the Starting Strength program by Mark Rippetoe, with one change: I swap deadlifts for bent over rows on Day A. From training clients in the real world, I've found this to be the most effective way for beginners to build strength.
 
 ---
 
@@ -26,7 +26,7 @@
 <a name="overview"></a>
 ## Program Overview
 
-This is a **linear progression program** built around the Big 5 compound movements:
+This is a program that is guaranteed to get you stronger, while helping you master the most important strength training exercises:
 - Squat
 - Deadlift
 - Bench Press
@@ -41,9 +41,6 @@ They train the most muscle mass in the shortest time. Master these five and you'
 - Just 3 days per week (recovery built in)
 - No fluff (no curls, ab work, or fancy accessories until you earn them)
 
-**Credit Where Credit Is Due:**  
-This program structure comes from Mark Rippetoe's **Starting Strength**, widely considered the gold standard for beginner barbell training. If you want the full version with detailed form instruction and programming beyond 4 weeks, get the book.
-
 ---
 
 <a name="who"></a>
@@ -55,28 +52,16 @@ This program structure comes from Mark Rippetoe's **Starting Strength**, widely 
 - You can train 3 days per week consistently
 - You want to get stronger, build muscle, and learn proper form
 
-**This program is NOT for you if:**
-- You've been lifting consistently for 12+ months (you need more advanced programming)
-- You can't train 3x per week (try a 2-day full-body split instead)
-- You have injuries that prevent squatting, deadlifting, or pressing (email me for modifications)
-
 ---
 
 <a name="equipment"></a>
 ## Equipment Needed
 
 **Minimum:**
-- Barbell (45 lbs)
+- Barbell
 - Power rack or squat stands
 - Bench (flat or adjustable)
 - Plates (25s, 10s, 5s, 2.5s)
-
-**Optional (but helpful):**
-- Microplates (1.25 lb or fractional plates for upper body lifts)
-- Lifting belt (once you're squatting/deadlifting 1.5x bodyweight)
-
-**Can I do this at home?**  
-Yes, if you have the equipment above. If you only have dumbbells, email me for a dumbbell-only version.
 
 ---
 
@@ -110,7 +95,7 @@ Alternate A/B every session. That's it.
 |----------|-------------|------|
 | Back Squat | 3 x 5 | 3 min |
 | Bench Press | 3 x 5 | 3 min |
-| Barbell Row | 3 x 5 | 2 min |
+| Barbell Row | 3 x 5 | 3 min |
 
 ---
 
@@ -134,14 +119,10 @@ Deadlifts are brutal. One heavy set is enough for beginners. You're also squatti
 
 Your first week is about finding weights you can lift with clean form for 3 sets of 5 reps, leaving 1-2 reps in the tank.
 
-**Example starting weights (adjust based on your strength):**
-- Squat: 95-135 lbs
-- Bench: 65-95 lbs
-- Overhead Press: 45-65 lbs
-- Row: 65-95 lbs
-- Deadlift: 135-185 lbs
-
-**If you're not sure, start light.** You'll add weight fast.
+**Rule:**  
+- **If your last rep looks slow but clean** → that's perfect.  
+- **If your form breaks down** → it's too heavy.  
+- **If it feels easy** → it's too light.
 
 ---
 
@@ -151,15 +132,7 @@ Add weight every session:
 - **Lower body (squat, deadlift):** +10 lbs per session
 - **Upper body (bench, press, row):** +5 lbs per session
 
-**Example progression (Squat):**
-- Session 1: 135 lbs x 3x5
-- Session 2: 145 lbs x 3x5
-- Session 3: 155 lbs x 3x5
-- Session 4: 165 lbs x 3x5
-- Session 5: 175 lbs x 3x5
-- Session 6: 185 lbs x 3x5
-
-By the end of 4 weeks, you'll have added 50+ lbs to your squat.
+**Critical Rule: Perfect reps > adding weight.**
 
 ---
 
@@ -172,7 +145,7 @@ If you can't complete all 3 sets of 5 reps:
 **Example:**  
 - Session 5: 185 lbs squat — only got 5, 5, 4 reps (failed last set)
 - Session 6: Repeat 185 lbs — got 5, 5, 5 (success)
-- Session 7: Add 10 lbs → 195 lbs
+- Session 7: Add 5 lbs (instead of 10) → 190 lbs
 
 Don't rush the progression. Slow and steady wins.
 
@@ -242,10 +215,6 @@ You can, but you don't need to. More isn't always better. Stick with 3 days for 
 
 Some soreness is normal. Sharp pain or pain that doesn't go away is not. Check your form. Film yourself. Email me if you're unsure.
 
-### 8. When should I deload?
-
-Every 6-8 weeks, take a lighter week (use 50-60% of your working weights). Deloads help your body catch up.
-
 ---
 
 ## After Week 4: What's Next?
@@ -272,6 +241,8 @@ This program is simple. It's not fancy. It doesn't have drop sets, supersets, or
 Show up 3x per week. Add weight when you can. Eat and sleep enough.
 
 Do that for 12 weeks and you'll be stronger than 90% of people in your gym.
+
+---
 
 Questions? Email me at ian@cypresstrainingcenter.com
 
