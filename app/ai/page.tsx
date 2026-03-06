@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
+import PhoneMockup from '@/components/PhoneMockup';
 
 export default function AIPage() {
   const containerRef = useRef(null);
@@ -41,7 +42,7 @@ export default function AIPage() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
-            Daniel builds custom training programs, tracks your progress, and coaches you through every workout — all via text.
+            Your AI coach builds custom training programs, tracks your progress, and coaches you through every workout — all via text.
           </motion.p>
 
           <motion.div
@@ -63,22 +64,6 @@ export default function AIPage() {
               See How It Works
             </a>
           </motion.div>
-        </motion.div>
-
-        {/* Hero Image */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.8 }}
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[320px] md:w-[380px] pb-12"
-        >
-          <Image
-            src="/app-screenshots/02-intro.jpg"
-            alt="Cypress Training AI App"
-            width={380}
-            height={820}
-            className="rounded-[40px] shadow-2xl"
-          />
         </motion.div>
       </section>
 
@@ -113,19 +98,19 @@ export default function AIPage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-[#667eea] to-[#764ba2] rounded-2xl flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6 shadow-lg">
                   1
                 </div>
-                <Image
+                <PhoneMockup
                   src="/app-screenshots/01-coach-selection.jpg"
                   alt="Choose your coach"
                   width={300}
                   height={650}
-                  className="rounded-[32px] shadow-xl mx-auto"
+                  className="mx-auto"
                 />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">
                 Choose Your Coach
               </h3>
               <p className="text-lg text-gray-600">
-                Meet Daniel — your AI strength coach. He'll learn your goals and build programs that fit your life.
+                Pick the coaching style that fits you. Your coach learns your goals and builds programs that fit your life.
               </p>
             </motion.div>
 
@@ -141,19 +126,19 @@ export default function AIPage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-[#667eea] to-[#764ba2] rounded-2xl flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6 shadow-lg">
                   2
                 </div>
-                <Image
+                <PhoneMockup
                   src="/app-screenshots/03-experience.jpg"
-                  alt="Tell Daniel about yourself"
+                  alt="Answer questions about yourself"
                   width={300}
                   height={650}
-                  className="rounded-[32px] shadow-xl mx-auto"
+                  className="mx-auto"
                 />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">
                 Answer a Few Questions
               </h3>
               <p className="text-lg text-gray-600">
-                Training experience, equipment, schedule — Daniel tailors everything to you.
+                Training experience, equipment, schedule — your coach tailors everything to you.
               </p>
             </motion.div>
 
@@ -169,12 +154,12 @@ export default function AIPage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-[#667eea] to-[#764ba2] rounded-2xl flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6 shadow-lg">
                   3
                 </div>
-                <Image
+                <PhoneMockup
                   src="/app-screenshots/09-workout.jpg"
                   alt="Start training"
                   width={300}
                   height={650}
-                  className="rounded-[32px] shadow-xl mx-auto"
+                  className="mx-auto"
                 />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">
@@ -204,7 +189,7 @@ export default function AIPage() {
                 Real Conversations.
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Traveling? Injured? Equipment broken? Just text Daniel. He adapts your program in real-time.
+                Traveling? Injured? Equipment broken? Just text your coach. They adapt your program in real-time.
               </p>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
@@ -215,7 +200,7 @@ export default function AIPage() {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-1">Swap Exercises On the Fly</h4>
-                    <p className="text-gray-600">Shoulder hurting? Daniel finds a safer alternative instantly.</p>
+                    <p className="text-gray-600">Shoulder hurting? Your coach finds a safer alternative instantly.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -226,7 +211,7 @@ export default function AIPage() {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-1">Adjust to Your Life</h4>
-                    <p className="text-gray-600">Hotel gym? Home setup? Daniel rebuilds workouts based on what you have.</p>
+                    <p className="text-gray-600">Hotel gym? Home setup? Your coach rebuilds workouts based on what you have.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -237,7 +222,7 @@ export default function AIPage() {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-1">Form Tips & Technique</h4>
-                    <p className="text-gray-600">Ask anything. Daniel explains every movement in plain English.</p>
+                    <p className="text-gray-600">Ask anything. Your coach explains every movement in plain English.</p>
                   </div>
                 </div>
               </div>
@@ -251,15 +236,14 @@ export default function AIPage() {
               className="flex justify-center lg:justify-end"
             >
               <div className="relative">
-                <Image
+                <PhoneMockup
                   src="/app-screenshots/08-injury.jpg"
                   alt="Real coaching conversation"
                   width={340}
                   height={680}
-                  className="rounded-[40px] shadow-2xl"
                 />
-                <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 max-w-[200px]">
-                  <p className="text-sm text-gray-600 italic">"Daniel swapped my bench press for a shoulder-friendly variation instantly."</p>
+                <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 max-w-[200px] z-20">
+                  <p className="text-sm text-gray-600 italic">"My coach swapped my bench press for a shoulder-friendly variation instantly."</p>
                 </div>
               </div>
             </motion.div>
@@ -278,12 +262,11 @@ export default function AIPage() {
               transition={{ duration: 0.8 }}
               className="order-2 lg:order-1 flex justify-center lg:justify-start"
             >
-              <Image
+              <PhoneMockup
                 src="/app-screenshots/10-swap.jpg"
                 alt="Exercise swap interface"
                 width={340}
                 height={680}
-                className="rounded-[40px] shadow-2xl"
               />
             </motion.div>
 
@@ -300,7 +283,7 @@ export default function AIPage() {
                 Keep Progressing.
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Don't like an exercise? Don't have the equipment? Just tap to swap. Daniel suggests alternatives that keep your program effective.
+                Don't like an exercise? Don't have the equipment? Just tap to swap. Your coach suggests alternatives that keep your program effective.
               </p>
               <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-100">
                 <h4 className="font-semibold text-gray-900 mb-4">Why the swap?</h4>
@@ -323,7 +306,7 @@ export default function AIPage() {
                   </li>
                 </ul>
                 <p className="text-sm text-gray-500 mt-6">
-                  Every swap improves Daniel's understanding of what works for you.
+                  Every swap improves your coach's understanding of what works for you.
                 </p>
               </div>
             </motion.div>
@@ -355,14 +338,14 @@ export default function AIPage() {
                     <span className="font-semibold text-gray-900">RPE Tracking</span>
                     <span className="text-sm text-gray-500">Rate of Perceived Exertion</span>
                   </div>
-                  <p className="text-gray-600">Track how hard each set feels. Daniel uses this to adjust your program intelligently.</p>
+                  <p className="text-gray-600">Track how hard each set feels. Your coach uses this to adjust your program intelligently.</p>
                 </div>
                 <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
                   <div className="flex items-center justify-between mb-2">
                     <span className="font-semibold text-gray-900">Personal Records</span>
                     <span className="text-sm text-gray-500">Celebrate milestones</span>
                   </div>
-                  <p className="text-gray-600">Hit a new PR? Daniel notices and adjusts your training to keep you progressing.</p>
+                  <p className="text-gray-600">Hit a new PR? Your coach notices and adjusts your training to keep you progressing.</p>
                 </div>
               </div>
             </motion.div>
@@ -374,12 +357,11 @@ export default function AIPage() {
               transition={{ duration: 0.8 }}
               className="flex justify-center lg:justify-end"
             >
-              <Image
+              <PhoneMockup
                 src="/app-screenshots/12-logged.jpg"
                 alt="Workout tracking"
                 width={340}
                 height={680}
-                className="rounded-[40px] shadow-2xl"
               />
             </motion.div>
           </div>
