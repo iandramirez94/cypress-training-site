@@ -49,8 +49,8 @@ export default function ChatMessage({
       <div
         className={`max-w-[70%] rounded-3xl px-5 py-3 shadow-sm ${
           isUser
-            ? 'bg-gray-100 text-gray-900 rounded-tr-md'
-            : 'bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white rounded-tl-md'
+            ? 'bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white rounded-tr-md'
+            : 'bg-gray-100 text-gray-900 rounded-tl-md'
         }`}
       >
         <p className="text-[15px] leading-relaxed">{message}</p>
