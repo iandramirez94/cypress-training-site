@@ -11,9 +11,10 @@ interface Message {
 interface ChatConversationProps {
   messages: Message[];
   coachName?: string;
+  coachAvatar?: string;
 }
 
-export default function ChatConversation({ messages, coachName = 'Your Coach' }: ChatConversationProps) {
+export default function ChatConversation({ messages, coachName = 'Your Coach', coachAvatar }: ChatConversationProps) {
   return (
     <div className="w-full max-w-2xl mx-auto bg-white rounded-3xl shadow-xl p-8 border border-gray-100">
       <div className="space-y-1">
@@ -23,6 +24,7 @@ export default function ChatConversation({ messages, coachName = 'Your Coach' }:
             sender={msg.sender}
             message={msg.message}
             coachName={coachName}
+            coachAvatar={coachAvatar}
             delay={msg.delay || index * 0.1}
           />
         ))}

@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
 import ChatConversation from '@/components/ChatConversation';
+import PhoneMockup from '@/components/PhoneMockup';
 
 export default function AIPage() {
   const containerRef = useRef(null);
@@ -97,6 +98,15 @@ export default function AIPage() {
               <div className="w-20 h-20 bg-gradient-to-br from-[#667eea] to-[#764ba2] rounded-3xl flex items-center justify-center text-white text-3xl font-bold mx-auto mb-8 shadow-xl">
                 1
               </div>
+              <div className="mb-8">
+                <PhoneMockup
+                  src="/app-screenshots/01-coach-selection.jpg"
+                  alt="Choose your coach"
+                  width={300}
+                  height={650}
+                  className="mx-auto"
+                />
+              </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 Choose Your Coach
               </h3>
@@ -116,6 +126,15 @@ export default function AIPage() {
               <div className="w-20 h-20 bg-gradient-to-br from-[#667eea] to-[#764ba2] rounded-3xl flex items-center justify-center text-white text-3xl font-bold mx-auto mb-8 shadow-xl">
                 2
               </div>
+              <div className="mb-8">
+                <PhoneMockup
+                  src="/app-screenshots/03-experience.jpg"
+                  alt="Answer questions"
+                  width={300}
+                  height={650}
+                  className="mx-auto"
+                />
+              </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 Answer a Few Questions
               </h3>
@@ -134,6 +153,15 @@ export default function AIPage() {
             >
               <div className="w-20 h-20 bg-gradient-to-br from-[#667eea] to-[#764ba2] rounded-3xl flex items-center justify-center text-white text-3xl font-bold mx-auto mb-8 shadow-xl">
                 3
+              </div>
+              <div className="mb-8">
+                <PhoneMockup
+                  src="/app-screenshots/09-workout.jpg"
+                  alt="Start training"
+                  width={300}
+                  height={650}
+                  className="mx-auto"
+                />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 Start Training
