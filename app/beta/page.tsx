@@ -13,7 +13,7 @@ function useScrollFadeUp(threshold = 0.15) {
   return { ref, inView };
 }
 
-function FadeUp({ children, delay = 0, className = "" }) {
+function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const { ref, inView } = useScrollFadeUp();
   return (
     <motion.div
@@ -29,7 +29,7 @@ function FadeUp({ children, delay = 0, className = "" }) {
 }
 
 // Chat bubble component
-function ChatBubble({ message, side, avatar, delay, parentInView }) {
+function ChatBubble({ message, side, avatar, delay, parentInView }: { message: string; side: string; avatar: string; delay: number; parentInView: boolean }) {
   return (
     <motion.div
       initial={{ opacity: 0, x: side === "left" ? -30 : 30 }}
@@ -54,7 +54,7 @@ function ChatBubble({ message, side, avatar, delay, parentInView }) {
   );
 }
 
-function ChatScenario({ title, subtitle, coach, messages }) {
+function ChatScenario({ title, subtitle, coach, messages }: { title: string; subtitle: string; coach: string; messages: Array<{ text: string; side: string }> }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px 0px" });
   const avatar = coach === "gayle" ? GAYLE_IMG : DANIEL_IMG;
@@ -92,7 +92,7 @@ function ChatScenario({ title, subtitle, coach, messages }) {
   );
 }
 
-function Step({ number, title, description, index }) {
+function Step({ number, title, description, index }: { number: string; title: string; description: string; index: number }) {
   const { ref, inView } = useScrollFadeUp();
   return (
     <motion.div
@@ -125,7 +125,7 @@ const CARD_ACCENTS = [
   { bg: "from-purple-50 to-white", bar: "bg-purple-500" },
 ];
 
-function FeatureCard({ title, description, index }) {
+function FeatureCard({ title, description, index }: { title: string; description: string; index: number }) {
   const { ref, inView } = useScrollFadeUp();
   const accent = CARD_ACCENTS[index % CARD_ACCENTS.length];
   return (
