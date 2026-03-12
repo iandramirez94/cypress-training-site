@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform, useInView } from "framer-motion";
 
 const GAYLE_IMG = "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/699bd5e86e31b0017c5032d3/13446d4fc_generated_image.png";
 const DANIEL_IMG = "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/699bd5e86e31b0017c5032d3/28c5f14af_generated_image.png";
-const APP_URL = "/ai/Chat?coach=gayle";
+const APP_URL = "/ai";
 
 function useScrollFadeUp(threshold = 0.15) {
   const ref = useRef(null);
