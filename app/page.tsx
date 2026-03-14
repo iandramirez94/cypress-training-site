@@ -266,7 +266,7 @@ export default function BetaLanding() {
               Join Free Beta
             </a>
             <p className="text-sm text-gray-400">
-              🎉 <span className="font-semibold">Limited to first 10 users</span> — No credit card required
+              No credit card required
             </p>
             <a
               href="#how-it-works"
@@ -612,7 +612,7 @@ export default function BetaLanding() {
               href={APP_URL}
               className="inline-flex items-center gap-2 bg-white font-semibold text-gray-900 text-base px-8 py-4 rounded-2xl hover:-translate-y-0.5 hover:shadow-xl active:scale-95 transition-all duration-200"
             >
-              Join Free Beta — 10 Spots Left
+              Join Free Beta
             </a>
             <p className="text-white/40 text-sm mt-5">No download required. No credit card required.</p>
           </FadeUp>
